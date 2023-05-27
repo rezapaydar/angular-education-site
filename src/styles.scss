@@ -1,0 +1,884 @@
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500&display=swap');
+
+:root{
+    --pink:#ff046f;
+    --violet:#c63bfa;
+    --fontSize:2rem;
+}
+
+*{
+    font-family: 'Vazirmatn' , sans-serif;
+    text-decoration: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+::selection{
+    background: var(--pink);
+    color: white;
+}
+
+html{
+    font-size: 62.5%;
+    /* overflow: hidden; */
+}
+
+.heading{
+    font-size: 6rem;
+    color: var(--pink);
+    text-align: center;
+    padding: 8rem 1rem 0 1rem;
+    padding-top: 6rem;
+    letter-spacing: .6rem;
+}
+
+.title{
+    padding: 0 1rem;
+    font-size: 2rem;
+    text-align: center;
+    font-weight: 500;
+    color: #aaa;
+}
+
+
+
+header {
+    width: 96%;
+    background: #fff;
+    position: fixed;
+    top:2rem;left:50%;
+    transform: translateX(-50%);
+    border-radius: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 999999999;
+    padding: 1rem 3rem 1rem 3rem;
+    transition: .3s;
+}
+
+header .logo{
+    font-size: var(--fontSize);
+}
+
+header ul {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+header ul li {
+    list-style-type: none;
+    padding: 1rem;
+}
+
+header ul li a {
+    font-size: var(--fontSize);
+    color:var(--pink);
+    transition: 0.3s;
+}
+
+header ul li a.active 
+,header ul li a:hover {
+    color:var(--violet);
+}
+
+/* ***********************   منو شماره دو    *********************************/
+.navbar2{
+    display: none;
+}
+
+.navbar2 ul {
+    display: none;
+    justify-content: space-around;
+
+}
+
+.navbar2 ul li {
+    list-style-type: none;
+    padding: 1rem;
+}
+
+.navbar2 ul li a {
+    font-size: var(--fontSize);
+    color:var(--pink);
+    transition: 0.3s;
+}
+
+.navbar2 ul li a:hover {
+    color:var(--violet);
+}
+
+body{
+    /* height: 3000px; */
+    overflow-y: scroll;
+    background: #f8f8f8;
+}
+
+.logo{
+    font-size:3rem;
+    font-weight: bold;
+    color: var(--violet);
+    text-transform: uppercase;
+}
+
+.logo i{
+    padding-left:10px;
+    padding: .2rem;
+}
+
+.fa-bars , .fa-times{
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--pink);
+    transition: 0.3s;
+}
+
+.fa-bars:hover , .fa-times:hover{
+    color: var(--violet);
+}
+
+
+/* ***************** NOTE START HOME section ***************** */
+
+section.home{
+    width: 100vw;
+    height: 100%;
+    background: linear-gradient(#c73bfacf,#ff0471c9) , url(assets/images/homebg.jpg) ;
+    background-repeat: none;
+    background-size: cover;
+    background-attachment: fixed;
+    text-align: center;
+    z-index: -1;
+}
+
+.home::before{
+    content: '';
+    position: absolute;
+    top: 55rem;left: 50%;
+    transform: translateX(-50%);
+    border-top: 70vh solid #f8f8f8;
+    width: 120%;
+    border-radius: 50%;
+    /* background: #f8f8f8; */
+    z-index: 1;
+}
+
+.home .content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    padding-top:14rem;
+    padding-bottom: 8rem;
+    text-align: center;
+
+}
+
+.home .content h1{
+    font-size: 5rem;
+    color: #fff;
+    padding: 0 1rem;
+    text-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+    text-transform: uppercase;
+}
+
+.home .content p{
+    font-size: 2rem;
+    color: #eee;
+    padding: 1rem 25rem;
+}
+
+.home .content button{
+    height: 4rem;
+    width: 20rem;
+    border-radius: 5rem;
+    background: var(--pink);
+    color: #eee;
+    font-size: 2rem;
+    transition: .2s;
+    border: none;
+    text-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.56);
+    cursor: pointer;
+
+}
+
+.home .content button:hover{
+    letter-spacing: .2rem;
+    text-shadow: 0 2rem 3rem rgba(0, 0, 0, 0.56);
+
+}
+
+
+.home .box-container{
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
+}
+
+
+.home .box-container .box{
+
+   background: #fff;
+   height: 25rem;
+   width: 25rem;
+   background: #fff;
+   text-align: center;
+   border-radius: 1rem;
+   box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+    margin: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 96999;
+
+}
+
+.home .box-container .box svg{
+    height: 6rem;
+    width: 6rem;
+    line-height: 6rem;
+    text-align: center;
+    border-radius: 95%;
+    padding: 1rem;
+    color: #eee;
+    background: var(--violet);
+    transition:.2s;
+    font-size: 3rem;
+}
+
+.home .box-container .box svg:hover{
+    background: var(--pink);
+}
+
+.home .box-container .box h3{
+    font-size: 3rem;
+    color: var(--pink);
+    transition: .2s;
+}
+
+.home .box-container .box h3:hover{
+    color: var(--violet);
+
+}
+
+.home .box-container .box p{
+    font-size: 1rem;
+    color: #333;
+}
+
+/* ***************** NOTE END HOME section ***************** */
+
+
+
+/* ***************** NOTE START ABOUT section ***************** */
+
+
+.about {
+    z-index: 9999;
+}
+
+.about .row{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10rem;
+
+}
+.about .row .image img{
+    height: 70vh;
+    width: 50vw;
+    padding: 2rem;
+
+}
+.about .row .content{
+    padding-left: 5rem;
+
+}
+
+.about .row .content h3{
+    font-size: 3rem;
+    color: var(--pink);
+}
+
+.about .row .content p{
+    font-size: 1.5rem;
+    color: #999;
+    padding: 1rem 0;
+}
+
+.about .row .content button{
+height: 3.5rem;
+width: 17rem;
+background: var(--violet);
+color: #fff;
+border: none;
+border-radius: 5rem;
+box-shadow: 0 rgba(0, 0, 0, .3);
+cursor: pointer;
+font-size: 2rem;
+transition: .2s;
+}
+
+.about .row .content button:hover{
+    letter-spacing: .3rem;
+    opacity: .8;
+}
+
+
+
+/* ***************** NOTE end ABOUT section ***************** */
+
+/* ***************** NOTE START teacher section ***************** */
+
+
+.teacher{
+    background: #f9f9f9;
+}
+
+.teacher .card-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+
+.teacher .card-container .card{
+    /* padding: 2rem; */
+    border-radius: 2rem;
+    margin: 2rem;
+    background: #fff;
+    text-align: center;
+    width: 28rem;
+    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+    position: relative;
+    overflow: hidden;
+}
+
+.teacher .card-container .card .image{
+    position: relative;
+    flex: 1 1 120px;
+    aspect-ratio: 1/1;
+}
+
+.teacher .card-container .card img{
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    // filter: grayscale();
+    transition: 0.3s;
+}
+
+.teacher .card-container .card:hover img{
+    filter: grayscale(0);
+    transform: translateY(-15px);
+
+}
+
+.teacher .card-container .card h3{
+    color: var(--pink);
+    font-size: 2rem;
+    padding: .5rem 0;
+}
+
+.teacher .card-container .card p{
+    color:#666;
+    font-size: 2rem;
+}
+
+.teacher .card-container .card svg{
+    height: 4rem;
+    width: 4rem;
+    line-height: 6rem;
+    text-align: center;
+    border-radius: 95%;
+    padding: 1rem;
+    color: var(--violet);
+    background: #f8f8f8;
+    transition:.2s;
+    font-size: 3rem;
+}
+
+.teacher .card-container .card svg:hover{
+    color: var(--pink);
+}
+
+/* ***************** NOTE end teacher section ***************** */
+
+
+
+/* ***************** NOTE start course section ***************** */
+
+.course .box-container{
+
+    width: 85%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    align-items: center;
+    
+}
+
+.course .box-container::before{
+    content: "";
+    width: 70vmax;
+    height: 70vmax;
+    position: absolute;
+    border-radius: 56% 44% 100% 0% / 25% 33% 67% 75% ;
+    background: rgba(159, 159, 159, 0.07);
+    left: -20vmin;
+    top: -20vmin;
+    animation: morph 15s linear infinite alternate,spin 20s linear infinite;
+    animation-name: morph, spin;
+    animation-duration: 15s, 20s;
+    animation-timing-function: linear, linear;
+    animation-delay: 0s, 0s;
+    animation-iteration-count: infinite, infinite;
+    animation-direction: alternate, normal;
+    animation-fill-mode: none, none;
+    animation-play-state: running, running;
+    z-index: 1;
+    will-change: border-radius,transform;
+    transform-origin: 55% 55%;
+    pointer-events: none;
+}
+
+.course .box-container::after{
+    content: "";
+    border-radius: 56% 44% 100% 0% / 25% 33% 67% 75% ;
+    width: 60rem;
+    height: 60rem;
+    left: auto;
+    z-index: 2;
+    right: -10vmin;
+    top: auto;
+    background: rgba(255,255,255,.07);
+    bottom: 0;
+    animation: morph 10s linear infinite alternate,spin 26s linear infinite reverse;
+    transform-origin: 20% 20%;
+}
+
+
+@keyframes morph{
+    0% {
+        border-radius: 40% 60% 60% 40%/70% 30%;
+      }
+      100% {
+        border-radius: 40% 60%;
+      }
+}
+
+@keyframes spin{
+    100% {
+        transform: rotate(1turn);
+      }
+}
+
+.course .box-container .box{
+    padding: 5rem;
+    height: auto;
+    width: 25rem;
+    margin: 3.5rem 2rem;
+    text-align: center;
+    box-shadow: 8px 10px 0px 0px #c63bfa,-5px -5px 10px 0px rgba(0,0,0,0.1);    padding: 1rem;
+    border-radius: 2rem;
+    transition: 0.2s;
+}
+
+.course .box-container .box:hover{
+    box-shadow: 8px 10px 20px 0px #c63bfa,-14px -10px 38px -17px rgba(0,0,0,0.1);    padding: 1rem;
+    transform: translateY(-5px);
+}
+
+.course .box-container .box svg{
+    height: 10rem;
+    width: 10rem;
+    line-height: 8rem;
+    text-align: center;
+    color: white;
+    background: var(--pink);
+    border-radius: 50%;
+    border-left: 1rem solid  var(--pink);
+    border-right: 1rem solid  var(--pink);
+    padding: 2rem;
+    box-shadow: 0 0 0 1rem #fff inset;
+    font-size: 3.5rem;
+}
+
+.course .box-container .box h3{
+    margin-top: 5px;
+    font-size: 2rem;
+    color: var(--violet);
+}
+
+
+.course .box-container .box p{
+    font-size: 1.5rem;
+    color:#666;
+    padding: 1rem 0;
+}
+
+/* ***************** NOTE  end course section ***************** */
+
+
+/* ***************** NOTE  START REVIEW section ***************** */
+
+.review{
+    margin: 10rem 0;
+    background: radial-gradient(#111111cf,rgba(39, 39, 39, 0.846)), url(/images/bgone.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 5rem 0;
+}
+
+.review .card-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+
+.review .card-container .card{
+    /* padding: 2rem; */
+    border-radius: 1rem;
+    margin: 2rem;
+    background: #fff;
+    text-align: center;
+    width: 28rem;
+    box-shadow: 0 .3rem .5rem rgba(0, 0, 0, .3);
+    position: relative;
+    overflow: visible;
+    transition: 0.3s;
+
+}
+
+.review .card-container .card .image{
+    /* position: relative;
+    flex: 1 1 120px;
+    aspect-ratio: 1/1; */
+/* margin: 0rem 5rem 0rem 5rem; */
+display: flex;
+justify-content: center;
+padding: 2rem;
+}
+
+.review .card-container .card img{
+    z-index: 1;
+    inset: 0;
+    width:8rem;
+    height: 8rem;
+    /* filter: grayscale(); */
+    transition: 0.3s;
+    border-radius: 5rem;
+    object-fit: cover;
+    margin-top: -4rem;
+    /* margin: 0 auto; */
+    border: .6rem solid var(--pink);
+    border-left: .6rem solid var(--pink);
+    border-right: .6rem solid var(--pink);
+}
+
+
+
+.review .card-container .card h3{
+    color: var(--pink);
+    font-size: 3rem;
+    padding: .5rem 0;
+}
+
+
+.review .card-container .card p{
+    color:#666;
+    font-size: 1.5rem;
+}
+
+.review .card-container .card .icons{
+    margin: 2rem 0;
+}
+
+.review .card-container .card svg{
+    height: 4rem;
+    width: 4rem;
+    line-height: 6rem;
+    text-align: center;
+    border-radius: 95%;
+    padding: 1rem;
+    color: var(--violet);
+    background: #f8f8f8;
+    transition:.2s;
+    font-size: 3rem;
+}
+
+.review .card-container .card svg:hover{
+    color: var(--pink);
+}
+
+.transHeader{
+    background: transparent;
+}
+
+/* ***************** NOTE  END REVIEW section ***************** */
+
+/* ***************** NOTE  start contact section ***************** */
+
+.contact .content{
+    margin-top:30px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+.contact .content .form {
+    /* flex-shrink: 1; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: right; */
+}
+.contact .content .form form{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+}
+
+.contact .content .form form input,
+.contact .content .form form button,
+.contact .content .form form textarea
+{
+    width:50rem;
+    margin: 1rem;
+    padding: 2rem;
+    outline: none;
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 3px 2px 26px -6px rgba(0, 0, 0, 0.334);
+    -webkit-box-shadow: 3px 2px 26px -6px rgba(0, 0, 0, 0.267);
+    -moz-box-shadow: 3px 2px 26px -6px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+.contact .content .form form textarea{
+    height: 100px;
+    resize: none;
+}
+
+.contact .content .form form input:focus , .contact .content .form form textarea:focus {
+    border-radius: 2rem;
+    border: .3rem solid var(--pink);
+    color: var(--pink);
+}
+
+
+.contact .content .form form button{
+    color: white;
+    background: var(--pink);
+    transition: 0.3s;
+}
+
+.contact .content .form form button:hover{
+    cursor: pointer;
+    box-shadow: 3px 24px 197px 5px rgba(94, 94, 94, 0.826);
+    -webkit-box-shadow: 3px 24px 197px 5px rgba(94, 94, 94, 0.841);
+    -moz-box-shadow: 3px 24px 197px 5px rgba(94, 94, 94, 0.815);
+}
+
+/* ***************** NOTE  END contact section ***************** */
+
+
+
+/*  ANCHOR SWIPER CONTAINER */
+
+swiper-container {
+    width: 100%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  swiper-slide {
+    background-position: center;
+    background-size: cover;
+    width: auto;
+    height: auto;
+  }
+
+  swiper-slide img {
+    display: block;
+    width: 100%;
+  }
+
+/*  ANCHOR SWIPER CONTAINER */
+
+/* ***************************** ANCHOR START BUTTON ANIMATION *******************************************/
+
+  
+button#logreg{
+    appearance: none;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 1em 1em;
+    position: relative;
+    transition: filter var(--motion-duration);
+    border-radius: 20rem;
+    margin:5px;
+  }
+
+  button#logreg svg{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+  }
+  
+  button#logreg:hover {
+    filter: brightness(1.1);
+  }
+  
+  button#logreg:active {
+    filter: brightness(0.9);
+  }
+  
+  button#logreg > span {
+    display: block;
+    position: relative;
+    transition: transform var(--motion-duration) var(--motion-ease);
+    z-index: 1;
+  }
+  
+  button#logreg:hover > span {
+    transform: scale(1.05);
+  }
+  
+  button#logreg:active > span {
+    transform: scale(0.95);
+  }
+  
+  button#logreg > svg {
+    fill: var(--pink);
+    position: absolute;
+    top: -5%;
+    left: -5%;
+    width: 110%;
+    height: 110%;
+    border-radius: 20rem;
+
+  }
+  
+  button#logreg > svg > path {
+    transition: var(--motion-duration) var(--motion-ease);
+  }
+  
+  button#logreg:hover > svg > path {
+    d: path("M0,0 C0,-5 100,-5 100,0 C105,0 105,100 100,100 C100,105 0,105 0,100 C-5,100 -5,0 0,0");
+  }
+  
+  button#logreg:active > svg > path {
+    d: path("M0,0 C30,10 70,10 100,0 C95,30 95,70 100,100 C70,90 30,90 0,100 C5,70 5,30 0,0");
+  }  
+  
+
+/* ***************************** ANCHOR START BUTTON ANIMATION *******************************************/
+
+
+/* ***************** NOTE start media query responsive ********************** */
+
+@media (max-width:768px) {
+
+    html{
+        font-size: 55%;
+    }
+
+    .fa-bars , .fa-times{
+        display: block;
+    }
+    
+    
+    /* ul:nth-child(0){
+        display: none;
+        flex-direction: column;
+    } */
+
+    .navbar{
+        display: none;
+    }
+
+    ul:nth-child(1){
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        top: 8rem; left:1.5rem;
+        z-index: 99999;
+        width: 96%;
+        border-radius:1rem;
+        /* visibility: hidden; */
+        transition: 0.3s;
+    }
+    
+    header {
+        flex-direction: row;
+        /* padding: 2rem 0; */
+  
+
+    }
+/*     
+    nav .navbar {
+        position: absolute;
+        top: 5rem; left:0;
+        width: 100%;
+        border-radius:1rem;
+        opacity: 0;
+        display: none;
+        transition: 0.3s;
+    } */
+
+    .navbar-toggle{
+        top:9rem;
+        opacity: 1;
+
+    }
+
+    .about .row { 
+        flex-flow: column-reverse;
+    }
+
+    .about .row .image img{
+        height: 80vh;
+        width: 95vw;
+        padding: 3rem;
+    }
+
+    .home::before{
+        content: "";
+        border: none;
+    }
+
+    .home .content p{
+         padding: 1rem 5rem;
+    }
+
+}
+
+/* ***************** NOTE end media query responsive ********************** */
