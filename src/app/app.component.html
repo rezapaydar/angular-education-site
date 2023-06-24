@@ -57,8 +57,8 @@
   <section id="home" class="home">
   
       <div class="content">
-          <h1>learn online from home</h1>
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque nemo, dolore pariatur quasi libero voluptate omnis dolorem magnam officia illo earum quam illum in odio veritatis. Ducimus odit quidem ipsum voluptatem aspernatur! Deserunt, ipsam reiciendis.</p>
+          <h1>{{generals.all.general[0].homeTitle}}</h1>
+          <p>{{generals.all.general[0].homeDescription}}</p>
           <a href="#"><button><i class="fas fa-book-open"></i>  discover more</button></a>
       </div>
   
@@ -110,15 +110,15 @@
       <div class="row">
   
           <div class="content">
-              <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, sapiente.</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, id dolores necessitatibus neque commodi, 
-                  autem doloremque magni doloribus alias eligendi aliquam nemo. Odio ullam nemo deleniti, porro recusandae rem facilis.
+              <h3>{{generals.all.general[0].aboutProfile.aboutTitle}}</h3>
+              <p>
+                {{generals.all.general[0].aboutProfile.aboutDescription}}
               </p>
               <a href="#"><button>learn more</button></a>
           </div>
   
           <div class="image">
-              <img src="assets/images/about.png" alt="">
+              <img src="../server/{{datas[3].path}}" alt="">
           </div>
   
       </div>
@@ -171,7 +171,7 @@
           <div class="card">
               <div class="image">
   
-                  <img src="assets/images/teacher3.JPG" alt="">
+                  <img src="assets/images/teacher3.jpg" alt="">
               </div>
               <h3>hossein name</h3>
               <p>i love teaching</p>
@@ -187,7 +187,7 @@
           <div class="card">
               <div class="image">
   
-                  <img src="assets/images/teacher4.JPG" alt="">
+                  <img src="assets/images/teacher4.jpg" alt="">
               </div>
               <h3>karim name</h3>
               <p>i love teaching</p>
@@ -266,82 +266,94 @@
       <h1 class="heading">students review</h1>
       <h3 class="title">whats our student says about us</h3>
   
-      <!-- <div class="card-container">
+      <div class="card-container">
   
-          <swiper-container class="mySwiper" pagination="true" effect="coverflow" grab-cursor="true" centered-slides="true"
-          slides-per-view="auto" coverflow-effect-rotate="50" coverflow-effect-stretch="0" coverflow-effect-depth="100"
-          coverflow-effect-modifier="1" coverflow-effect-slide-shadows="true">
+          <swiper class="mySwiper"     
+          [slideToClickedSlide]="true"
+          [effect]="'coverflow'"
+          [grabCursor]="true"
+          [centeredSlides]="true"
+          [slidesPerView]="'auto'"
+          [coverflowEffect]="{
+            rotate: 30,
+            stretch: -32,
+            depth: 100,
+            modifier: 1,
+            slideShadows: false
+          }"
+          [pagination]="true">
   
           
-          <swiper-slide>
-              <div class="card">
-                  <div class="image">
+            <ng-template swiperSlide>
+                <div class="card">
+                    <div class="image">
+    
+                        <img src="assets/images/teacher1.JPG" alt="">
+                    </div>
+                    <h3>mamareza name</h3>
+                    <p>i love teaching</p>
+                    <div class="icons">
+                        <a href="#" class="fas fa-star" ></a>
+                        <a href="#" class="fas fa-star" ></a>
+                        <a href="#" class="fas fa-star" ></a>
+                        <a href="#" class="fas fa-star" ></a>
+                    </div>
+                </div>
+            </ng-template >
+            
+            <ng-template swiperSlide>
+                <div class="card">
+                    <div class="image">
+                        <img src="assets/images/teacher2.JPG" alt="">
+                    </div>
+                    <h3>ali name</h3>
+                    <p>i love teaching</p>
+                    <div class="icons">
+                        <a href="#" class="fas fa-star" ></a>
+                        <a href="#" class="fas fa-star" ></a>
+                        <a href="#" class="fas fa-star" ></a>
+                        <a href="#" class="fas fa-star" ></a>
+                    </div>
+                </div>
+            </ng-template >
+            
+            <ng-template swiperSlide>
+                <div class="card">
+                    <div class="image">
+    
+                        <img src="assets/images/teacher3.jpg" alt="">
+                    </div>
+                    <h3>hossein name</h3>
+                    <p>i love teaching</p>
+                    <div class="icons">
+                        <a href="#" class="fas fa-star" ></a>
+                        <a href="#" class="fas fa-star" ></a>
+                        <a href="#" class="fas fa-star" ></a>
+                        <a href="#" class="fas fa-star" ></a>
+                    </div>
+                </div>
+            </ng-template >
+            
+            <ng-template swiperSlide>
+                <div class="card">
+                    <div class="image">
+    
+                        <img src="assets/images/teacher4.jpg" alt="">
+                    </div>
+                    <h3>karim name</h3>
+                    <p>i love teaching</p>
+                    <div class="icons">
+                        <a href="#" class="fas fa-star" ></a>
+                        <a href="#" class="fas fa-star" ></a>
+                        <a href="#" class="fas fa-star" ></a>
+                        <a href="#" class="fas fa-star" ></a>
+                    </div>
+                </div>
+            </ng-template >
+
+          </swiper>
   
-                      <img src="assets/images/teacher1.JPG" alt="">
-                  </div>
-                  <h3>mamareza name</h3>
-                  <p>i love teaching</p>
-                  <div class="icons">
-                      <a href="#" class="fas fa-star" ></a>
-                      <a href="#" class="fas fa-star" ></a>
-                      <a href="#" class="fas fa-star" ></a>
-                      <a href="#" class="fas fa-star" ></a>
-                  </div>
-              </div>
-          </swiper-slide>
-          
-          <swiper-slide>
-              <div class="card">
-                  <div class="image">
-                      <img src="assets/images/teacher2.JPG" alt="">
-                  </div>
-                  <h3>ali name</h3>
-                  <p>i love teaching</p>
-                  <div class="icons">
-                      <a href="#" class="fas fa-star" ></a>
-                      <a href="#" class="fas fa-star" ></a>
-                      <a href="#" class="fas fa-star" ></a>
-                      <a href="#" class="fas fa-star" ></a>
-                  </div>
-              </div>
-          </swiper-slide>
-          
-          <swiper-slide>
-              <div class="card">
-                  <div class="image">
-  
-                      <img src="assets/images/teacher3.JPG" alt="">
-                  </div>
-                  <h3>hossein name</h3>
-                  <p>i love teaching</p>
-                  <div class="icons">
-                      <a href="#" class="fas fa-star" ></a>
-                      <a href="#" class="fas fa-star" ></a>
-                      <a href="#" class="fas fa-star" ></a>
-                      <a href="#" class="fas fa-star" ></a>
-                  </div>
-              </div>
-          </swiper-slide>
-          
-          <swiper-slide>
-              <div class="card">
-                  <div class="image">
-  
-                      <img src="assets/images/teacher4.JPG" alt="">
-                  </div>
-                  <h3>karim name</h3>
-                  <p>i love teaching</p>
-                  <div class="icons">
-                      <a href="#" class="fas fa-star" ></a>
-                      <a href="#" class="fas fa-star" ></a>
-                      <a href="#" class="fas fa-star" ></a>
-                      <a href="#" class="fas fa-star" ></a>
-                  </div>
-              </div>
-          </swiper-slide>
-          </swiper-container>
-  
-      </div> -->
+      </div>
   
   
   </section>

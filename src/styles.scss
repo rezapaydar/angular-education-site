@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500&display=swap');
+@import "~swiper/css";
+@import "~swiper/css/effect-coverflow";
+@import "~swiper/css/pagination";
 
 :root{
     --pink:#ff046f;
@@ -142,6 +145,8 @@ body{
 
 
 /* ***************** NOTE START HOME section ***************** */
+
+
 
 section.home{
     width: 100vw;
@@ -705,23 +710,42 @@ padding: 2rem;
 
 /*  ANCHOR SWIPER CONTAINER */
 
-swiper-container {
+.swiper {
     width: 100%;
     padding-top: 50px;
     padding-bottom: 50px;
   }
-
-  swiper-slide {
-    background-position: center;
-    background-size: cover;
-    width: auto;
-    height: auto;
+  
+  .swiper-slide {
+    // background-position: center;
+    // background-size: cover;
+    width: 300px;
+    height: 300px;
   }
-
-  swiper-slide img {
+  
+  .swiper-slide img {
     display: block;
     width: 100%;
   }
+  
+
+// swiper-container {
+//     width: 100%;
+//     padding-top: 50px;
+//     padding-bottom: 50px;
+//   }
+
+//   swiper-slide {
+//     background-position: center;
+//     background-size: cover;
+//     width: auto;
+//     height: auto;
+//   }
+
+//   swiper-slide img {
+//     display: block;
+//     width: 100%;
+//   }
 
 /*  ANCHOR SWIPER CONTAINER */
 
