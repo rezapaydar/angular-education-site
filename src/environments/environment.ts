@@ -3,9 +3,11 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  mongoDBUrl:'localhost:27017/educationSite.general',
-  baseUrl:'http://localhost:3000'
+  production: true,
+  urls:{
+    mongoDBUrl:'localhost:27017/educationSite.general',
+    baseUrl:'http://localhost:3000'
+  }
 };
 
 /*

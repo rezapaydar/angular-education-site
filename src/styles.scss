@@ -15,6 +15,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    direction: rtl;
 }
 
 ::selection{
@@ -509,7 +510,7 @@ transition: .2s;
     transform: translateY(-5px);
 }
 
-.course .box-container .box svg{
+.course .box-container .box img{
     height: 10rem;
     width: 10rem;
     line-height: 8rem;
@@ -904,5 +905,9 @@ button#logreg{
     }
 
 }
+
+
+  
+  
 
 /* ***************** NOTE end media query responsive ********************** */

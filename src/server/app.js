@@ -1,6 +1,7 @@
 'use strict'
 
 const express = require('express');
+const nodemailer = require("nodemailer");
 const mongoose = module.exports = require('mongoose');
 const bodyParser = require('body-parser')
 var cors = require('cors')
@@ -26,7 +27,7 @@ app.use(cors(corsOpt)); // cors for all the routes of the application
 app.options('*', cors(corsOpt)); // automatic cors gen for HTTP verbs in all routes, This can be redundant but I kept to be sure that will always work.
 
 const studentsReview = require('./schema/studentsReview');
-const topCourses = require('./schema/topCourses');
+const topCourses = require('./schema/topcourses');
 const topteachers = require('./schema/topteachers');
 
 mongoose.connection.on('connected', () => {
@@ -61,9 +62,13 @@ app.get('/', (req, res) => {
 app.use('/general',require('./routes/general'))
 app.use('/img',require('./routes/imgupload'))
 app.use('/topteacher',require('./routes/topteacher'))
-
+app.use('/topcourses',require('./routes/topcourses'))
+app.use('/studentreview',require('./routes/studentReview'))
+app.use('/contact',require('./routes/contactus'))
 
 
 app.listen(3000, () => {
   console.log('Server started on port 3000');
 });
+
+module.exports = app ;

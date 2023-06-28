@@ -1,0 +1,94 @@
+
+:root{
+    --pink:#ff046f;
+    --violet:#c63bfa;
+    --fontSize:2rem;
+}
+
+body{
+margin:0;
+overflow-x:hidden;
+}
+
+.footer{
+    margin-top: 150px;
+background:#161616;
+padding:30px 0px;
+font-family: 'Play', sans-serif;
+text-align:center;
+position: relative;
+}
+
+.footer::after{
+    content: "";
+    position: absolute;
+    top: -10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    border-top: 35vh solid #161616;
+    width: 120%;
+    border-radius: 50%;
+    background: #161616;
+    z-index: -1;
+}
+
+.footer .logo{
+
+        font-size:5rem;
+        font-weight: bold;
+        color: var(--violet);
+        text-transform: uppercase;
+
+}
+
+.footer .content{
+
+}
+
+.footer .row{
+width:100%;
+margin:1% 0%;
+padding:0.6% 0%;
+color:gray;
+font-size:2rem;
+}
+
+.footer .row a{
+text-decoration:none;
+color:gray;
+transition:0.5s;
+}
+
+.footer .row a:hover{
+color:var(--pink);
+}
+
+.footer .row ul{
+width:100%;
+}
+
+.footer .row ul li{
+display:inline-block;
+margin:0px 30px;
+}
+
+.footer .row a i{
+font-size:2em;
+margin:0% 1%;
+}
+
+@media (max-width:720px){
+.footer{
+text-align:left;
+padding:5%;
+}
+.footer .row ul li{
+display:block;
+margin:10px 0px;
+text-align:left;
+}
+.footer .row a i{
+margin:0% 3%;
+}
+}
+

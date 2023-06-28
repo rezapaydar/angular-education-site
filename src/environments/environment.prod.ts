@@ -1,3 +1,7 @@
 export const environment = {
-  production: true
+  production: true,
+  urls:{
+    mongoDBUrl:'localhost:27017/educationSite.general',
+    baseUrl:'http://localhost:3000'
+  }
 };

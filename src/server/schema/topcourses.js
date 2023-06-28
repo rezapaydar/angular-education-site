@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 const express = require('express');
 
 
-const topCourses = new mongoose.Schema(
+const topcourses = new mongoose.Schema(
 {
 
         imgurl: String,
@@ -11,4 +11,4 @@ const topCourses = new mongoose.Schema(
 }
 )
 
-module.exports=mongoose.model('topCourses', topCourses);
+module.exports=mongoose.model('topcourses', topcourses);

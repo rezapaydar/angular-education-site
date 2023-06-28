@@ -18,7 +18,7 @@
               <li><a href="#contact">contact</a></li>
               <button id="logreg">
                   <span>
-                      <i class="fas fa-reply"></i> signup</span>
+                      <i class="fas fa-reply"></i> sign in</span>
                   <svg viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
                     <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0"/>
                   </svg>
@@ -136,24 +136,26 @@
       <h3 class="title">meet professional trainer </h3>
   
       <div class="card-container">
+
+        
   
-          <div class="card">
+          <div *ngFor="let item of topteachers" class="card">
               <div class="image">
   
-                  <img src="assets/images/teacher1.JPG" alt="">
+                  <img src="../server/{{item.imgurl}}" alt="">
               </div>
-              <h3>mamareza name</h3>
-              <p>i love teaching</p>
+              <h3>{{item.name}}</h3>
+              <p>{{item.interest}}</p>
               <div class="icons">
-                  <a href="#" class="fab fa-facebook-f" ></a>
-                  <a href="#" class="fab fa-twitter" ></a>
-                  <a href="#" class="fab fa-instagram" ></a>
-                  <a href="#" class="fab fa-github" ></a>
+                  <a href="{{item.facebook}}" class="fab fa-facebook-f" ></a>
+                  <a href="{{item.twitter}}" class="fab fa-twitter" ></a>
+                  <a href="{{item.instagram}}" class="fab fa-instagram" ></a>
+                  <a href="{{item.github}}" class="fab fa-github" ></a>
               </div>
           </div>
   
           
-          <div class="card">
+          <!-- <div class="card">
               <div class="image">
                   <img src="assets/images/teacher2.JPG" alt="">
               </div>
@@ -197,7 +199,7 @@
                   <a href="#" class="fab fa-instagram" ></a>
                   <a href="#" class="fab fa-github" ></a>
               </div>
-          </div>
+          </div> -->
   
       </div>
   
@@ -216,12 +218,12 @@
   
       <div class="box-container">
       
-          <div class="box">
-              <i class="fab fa-html5"></i>
-              <h3>html5</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, commodi.</p>
+          <div class="box" *ngFor="let course of topcourses">
+              <img src="../server/{{course.imgurl}}" class="w-100 h-100"/>
+              <h3>{{course.name}}</h3>
+              <p>{{course.description}}</p>
           </div>
-      
+<!--       
           <div class="box">
               <i class="fab fa-css3-alt"></i>
               <h3>css3</h3>
@@ -251,7 +253,7 @@
               <i class="fas fa-paint-brush"></i>
               <h3>graphic design</h3>
               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, commodi.</p>
-          </div>
+          </div> -->
   
       </div>
   
@@ -284,24 +286,24 @@
           [pagination]="true">
   
           
-            <ng-template swiperSlide>
-                <div class="card">
+            <ng-template swiperSlide *ngFor="let item of studentreview">
+                <div class="card" >
                     <div class="image">
     
-                        <img src="assets/images/teacher1.JPG" alt="">
+                        <img src="../server/{{item.imgurl}}" alt="">
                     </div>
-                    <h3>mamareza name</h3>
-                    <p>i love teaching</p>
+                    <h3>{{item.name}}</h3>
+                    <p>{{item.criticalOpinion}}</p>
                     <div class="icons">
+                        <!-- <a href="#" class="fas fa-star" *ngFor="let star of item.arrStar"></a> -->
+                        <!-- <a href="#" class="fas fa-star" ></a>
                         <a href="#" class="fas fa-star" ></a>
-                        <a href="#" class="fas fa-star" ></a>
-                        <a href="#" class="fas fa-star" ></a>
-                        <a href="#" class="fas fa-star" ></a>
+                        <a href="#" class="fas fa-star" ></a> -->
                     </div>
                 </div>
             </ng-template >
             
-            <ng-template swiperSlide>
+            <!-- <ng-template swiperSlide>
                 <div class="card">
                     <div class="image">
                         <img src="assets/images/teacher2.JPG" alt="">
@@ -349,7 +351,7 @@
                         <a href="#" class="fas fa-star" ></a>
                     </div>
                 </div>
-            </ng-template >
+            </ng-template > -->
 
           </swiper>
   
@@ -372,12 +374,12 @@
       </div>
   
       <div class="form">
-          <form action="#">
-              <input type="text" placeholder="full name">
-              <input type="email" placeholder="email">
-              <input type="phone" placeholder="phone">
-              <textarea name="" id="" cols="30" rows="10" placeholder="address"></textarea>
-              <button>discovr more</button>
+          <form [formGroup]="formData">
+              <input type="text" formControlName="fullname" placeholder="نام کامل">
+              <input type="email" formControlName="email" placeholder="ایمیل">
+              <input type="phone" formControlName="telephone" placeholder="تلفن">
+              <textarea name="message" formControlName="message" id="" cols="30" rows="10" placeholder="متن پیام"></textarea>
+              <button (click)="sendForm()">discovr more</button>
           </form>
       </div>
   
@@ -389,12 +391,38 @@
   
   <!-- *************************************************** NOTE footer start *************************************** -->
   
-  <footer class="footer" id="footer">
-  
-      
-  
-  </footer>
-  
+  <footer>
+    <div class="footer">
+        <a href="#" class="logo"> <i class="fas fa-user-graduate"></i>logo</a>
+    <div class="row">
+
+        <div class="content">
+            <h3>{{generals.all.general[0].aboutProfile.aboutTitle}}</h3>
+            <p>
+              {{generals.all.general[0].aboutProfile.aboutDescription}}
+            </p>
+        </div>
+
+    </div>
+    
+    <div class="row">
+    <ul>
+        <li><a href="#home" class="active">home</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#teacher">teacher</a></li>
+        <li><a href="#course">course</a></li>
+        <li><a href="#review">review</a></li>
+        <li><a href="#contact">contact</a></li>
+    </ul>
+    </div>
+    
+    <div class="row">
+    INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh 
+    </div>
+    </div>
+    </footer>
+    
+    
   <!-- *************************************************** NOTE footer  end *************************************** -->
   
   
