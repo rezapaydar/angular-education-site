@@ -1,0 +1,458 @@
+
+
+  
+  <!-- ****************************************************** ANCHOR start  menu 1 and header ************************************************** -->
+  
+  
+
+  <header id="header">
+  
+    <a href="#" class="logo"> <i class="fas fa-user-graduate"></i>logo</a>
+
+    <nav class="navbar" id="navbar">
+
+        <ul>
+            <li><a href="#home" class="active">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#teacher">teacher</a></li>
+            <li><a href="#course">course</a></li>
+            <li><a href="#review">review</a></li>
+            <li><a href="#contact">contact</a></li>
+
+              <button id="logreg"  [ngStyle]="{'display': isDisplayed}" (click)="goto('login')" >
+                      <span>
+                          <i class="fas fa-reply"></i> sign in
+                      </span>
+                      <svg viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
+                          <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0"/>
+                          </svg>
+              </button>
+
+              <div class="action" [ngStyle]="{'display':isNotDisplayed}">
+                <div class="profile" onclick="menuToggle();">
+                  <img src="./assets/avatar.jpg" />
+                </div>
+                <div class="menu">
+                  <h3>Someone Famous<br /><span>Website Designer</span></h3>
+                  <ul>
+                    <!-- <li>
+                      <img src="./assets/icons/user.png" /><a href="#">My profile</a>
+                    </li> -->
+                    <li>
+                      <img src="assets/images/edit.png" /><a href="#">ویرایش پروفایل</a>
+                    </li>
+                    <li>
+                      <img src="assets/images/upload.png" /><a href="#">آپلود ویدیو</a>
+                    </li>
+                    <!-- <li>
+                      <img src="./assets/icons/settings.png" /><a href="#">Setting</a>
+                    </li>
+                    <li><img src="./assets/icons/question.png" /><a href="#">Help</a></li> -->
+                    <li>
+                      <img src="assets/images/logout.png" /><a (click)="logout()">خروج</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+        </ul>
+
+    </nav>
+
+    <div class="fas fa-bars" id="fa-bars" onclick="clicker()"></div>
+
+</header>
+
+<!-- ******************************************************ANCHOR end  menu 1 and header ************************************************** -->
+
+
+<!-- ******************************************************ANCHOR start  menu 2 responsive ************************************************** -->
+
+<nav class="navbar2" id="navbar2">
+
+    <ul>
+        <li><a href="#home" class="active">home</a></li>
+        <li><a href="#about">about</a></li>
+        <li><a href="#teacher">teacher</a></li>
+        <li><a href="#course">course</a></li>
+        <li><a href="#review">review</a></li>
+        <li><a href="#contact">contact</a></li>
+    </ul>
+
+</nav>
+
+<!-- ******************************************************ANCHOR end  menu 2 responsive ************************************************** -->
+
+
+<!--  ************************************************ANCHOR  start  section home    ***************************************************************-->
+
+<section id="home" class="home">
+
+    <div class="content">
+        <h1>{{generals.all.general[0].homeTitle}}</h1>
+        <p>{{generals.all.general[0].homeDescription}}</p>
+        <a href="#"><button><i class="fas fa-book-open"></i>  discover more</button></a>
+    </div>
+
+    <div class="box-container">
+
+
+        <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+            <h3>trending courses</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus non soluta labore eligendi omnis iste.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-fire"></i>
+            <h3>free trial</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus non soluta labore eligendi omnis iste.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-award"></i>
+            <h3>certification</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus non soluta labore eligendi omnis iste.</p>
+        </div>
+
+    </div>
+
+
+
+</section>
+
+<!--  ************************************************ ANCHOR end  section home    ***************************************************************-->
+
+
+<!-- ******************************************************ANCHOR start section about ************************************************** -->
+<section class="about" id="about">
+
+
+    <h1 class="heading">about us</h1>
+    <h3 class="title">start your journey with us</h3>
+
+    <div class="row">
+
+        <div class="content">
+            <h3>{{generals.all.general[0].aboutProfile.aboutTitle}}</h3>
+            <p>
+              {{generals.all.general[0].aboutProfile.aboutDescription}}
+            </p>
+            <a href="#"><button>learn more</button></a>
+        </div>
+
+        <div class="image">
+            <img src="../server/{{datas[3].path}}" alt="">
+        </div>
+
+    </div>
+
+
+</section>
+
+<!-- ******************************************************ANCHOR end section about ************************************************** -->
+
+<!-- ******************************************************ANCHOR start section teacher ************************************************** -->
+
+<section id="teacher" class="teacher">
+
+    <h1 class="heading">our teachers</h1>
+    <h3 class="title">meet professional trainer </h3>
+
+    <div class="card-container">
+
+      
+
+        <div *ngFor="let item of topteachers" class="card">
+            <div class="image">
+
+                <img src="../server/{{item.imgurl}}" alt="">
+            </div>
+            <h3>{{item.name}}</h3>
+            <p>{{item.interest}}</p>
+            <div class="icons">
+                <a href="{{item.facebook}}" class="fab fa-facebook-f" ></a>
+                <a href="{{item.twitter}}" class="fab fa-twitter" ></a>
+                <a href="{{item.instagram}}" class="fab fa-instagram" ></a>
+                <a href="{{item.github}}" class="fab fa-github" ></a>
+            </div>
+        </div>
+
+        
+        <!-- <div class="card">
+            <div class="image">
+                <img src="assets/images/teacher2.JPG" alt="">
+            </div>
+            <h3>ali name</h3>
+            <p>i love teaching</p>
+            <div class="icons">
+                <a href="#" class="fab fa-facebook-f" ></a>
+                <a href="#" class="fab fa-twitter" ></a>
+                <a href="#" class="fab fa-instagram" ></a>
+                <a href="#" class="fab fa-github" ></a>
+            </div>
+        </div>
+
+        
+        <div class="card">
+            <div class="image">
+
+                <img src="assets/images/teacher3.jpg" alt="">
+            </div>
+            <h3>hossein name</h3>
+            <p>i love teaching</p>
+            <div class="icons">
+                <a href="#" class="fab fa-facebook-f" ></a>
+                <a href="#" class="fab fa-twitter" ></a>
+                <a href="#" class="fab fa-instagram" ></a>
+                <a href="#" class="fab fa-github" ></a>
+            </div>
+        </div>
+
+        
+        <div class="card">
+            <div class="image">
+
+                <img src="assets/images/teacher4.jpg" alt="">
+            </div>
+            <h3>karim name</h3>
+            <p>i love teaching</p>
+            <div class="icons">
+                <a href="#" class="fab fa-facebook-f" ></a>
+                <a href="#" class="fab fa-twitter" ></a>
+                <a href="#" class="fab fa-instagram" ></a>
+                <a href="#" class="fab fa-github" ></a>
+            </div>
+        </div> -->
+
+    </div>
+
+
+</section>
+
+<!-- ******************************************************ANCHOR end section teacher ************************************************** -->
+
+<!-- ******************************************************ANCHOR start course section *************************************************-->
+
+<section class="course" id="course">
+
+    
+    <h1 class="heading">we courses</h1>
+    <h3 class="title">upgrade your skills with we course</h3>
+
+    <div class="box-container">
+    
+        <div class="box" *ngFor="let course of topcourses">
+            <img src="../server/{{course.imgurl}}" class="w-100 h-100"/>
+            <h3>{{course.name}}</h3>
+            <p>{{course.description}}</p>
+        </div>
+<!--       
+        <div class="box">
+            <i class="fab fa-css3-alt"></i>
+            <h3>css3</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, commodi.</p>
+        </div>
+    
+        <div class="box">
+            <i class="fab fa-js-square"></i>
+            <h3>html5</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, commodi.</p>
+        </div>
+    
+        <div class="box">
+            <i class="fab fa-bootstrap"></i>
+            <h3>bootstrap</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, commodi.</p>
+        </div>
+
+        <div class="box">
+            <i class="fas fa-bullhorn"></i>
+            <h3>seo marketing</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, commodi.</p>
+        </div>
+
+        
+        <div class="box">
+            <i class="fas fa-paint-brush"></i>
+            <h3>graphic design</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, commodi.</p>
+        </div> -->
+
+    </div>
+
+</section>
+
+<!-- ******************************************************ANCHOR end course section *************************************************-->
+
+
+<!-- *************************************************** ANCHOR review section start *************************************** -->
+<section class="review" id="review">
+
+    <h1 class="heading">students review</h1>
+    <h3 class="title">whats our student says about us</h3>
+
+    <div class="card-container">
+
+        <swiper class="mySwiper"     
+        [slideToClickedSlide]="true"
+        [effect]="'coverflow'"
+        [grabCursor]="true"
+        [centeredSlides]="true"
+        [slidesPerView]="'auto'"
+        [coverflowEffect]="{
+          rotate: 30,
+          stretch: -32,
+          depth: 100,
+          modifier: 1,
+          slideShadows: false
+        }"
+        [pagination]="true">
+
+        
+          <ng-template swiperSlide *ngFor="let item of studentreview">
+              <div class="card" >
+                  <div class="image">
+  
+                      <img src="../server/{{item.imgurl}}" alt="">
+                  </div>
+                  <h3>{{item.name}}</h3>
+                  <p>{{item.criticalOpinion}}</p>
+                  <div class="icons">
+                      <!-- <a href="#" class="fas fa-star" *ngFor="let star of item.arrStar"></a> -->
+                      <!-- <a href="#" class="fas fa-star" ></a>
+                      <a href="#" class="fas fa-star" ></a>
+                      <a href="#" class="fas fa-star" ></a> -->
+                  </div>
+              </div>
+          </ng-template >
+          
+          <!-- <ng-template swiperSlide>
+              <div class="card">
+                  <div class="image">
+                      <img src="assets/images/teacher2.JPG" alt="">
+                  </div>
+                  <h3>ali name</h3>
+                  <p>i love teaching</p>
+                  <div class="icons">
+                      <a href="#" class="fas fa-star" ></a>
+                      <a href="#" class="fas fa-star" ></a>
+                      <a href="#" class="fas fa-star" ></a>
+                      <a href="#" class="fas fa-star" ></a>
+                  </div>
+              </div>
+          </ng-template >
+          
+          <ng-template swiperSlide>
+              <div class="card">
+                  <div class="image">
+  
+                      <img src="assets/images/teacher3.jpg" alt="">
+                  </div>
+                  <h3>hossein name</h3>
+                  <p>i love teaching</p>
+                  <div class="icons">
+                      <a href="#" class="fas fa-star" ></a>
+                      <a href="#" class="fas fa-star" ></a>
+                      <a href="#" class="fas fa-star" ></a>
+                      <a href="#" class="fas fa-star" ></a>
+                  </div>
+              </div>
+          </ng-template >
+          
+          <ng-template swiperSlide>
+              <div class="card">
+                  <div class="image">
+  
+                      <img src="assets/images/teacher4.jpg" alt="">
+                  </div>
+                  <h3>karim name</h3>
+                  <p>i love teaching</p>
+                  <div class="icons">
+                      <a href="#" class="fas fa-star" ></a>
+                      <a href="#" class="fas fa-star" ></a>
+                      <a href="#" class="fas fa-star" ></a>
+                      <a href="#" class="fas fa-star" ></a>
+                  </div>
+              </div>
+          </ng-template > -->
+
+        </swiper>
+
+    </div>
+
+
+</section>
+<!-- *************************************************** ANCHOR review section end *************************************** -->
+
+<!-- *************************************************** ANCHOR contact section start *************************************** -->
+<section id="contact" class="contact">
+
+    <h1 class="heading">contact</h1>
+    <h3 class="title">contact us with email telephone </h3>
+
+<div class="content">
+
+    <div class="image">
+        <img src="assets/images/contactus-0۱.png" alt="">
+    </div>
+
+    <div class="form">
+        <form [formGroup]="formData">
+            <input type="text" formControlName="fullname"  (keyup)="update()"  placeholder="نام کامل">
+            <input type="email" formControlName="email"  (keyup)="update()" placeholder="ایمیل">
+            <input type="phone" formControlName="telephone" (keyup)="update()"  placeholder="تلفن">
+            <textarea name="message" formControlName="message" (keyup)="update()"  id="" cols="30" rows="10" placeholder="متن پیام"></textarea>
+            <button (click)="sendForm()" >discovr more</button>
+        </form>
+    </div>
+
+  <!-- <jw-modal id="modal-1">
+      <h1>لطفا فرم را با دقت پر کنید</h1>
+      <p>دقت کنید تمام ورودی ها با فرمت صحیح باشند</p>
+      <button (click)="modalService.close();">باشه
+      </button>
+  </jw-modal> -->
+
+</div>
+
+</section>
+
+<!-- *************************************************** ANCHOR contact section end *************************************** -->
+
+<!-- *************************************************** NOTE footer start *************************************** -->
+
+<footer>
+  <div class="footer">
+      <a href="#" class="logo"> <i class="fas fa-user-graduate"></i>logo</a>
+  <div class="row">
+
+      <div class="content">
+          <h3>{{generals.all.general[0].aboutProfile.aboutTitle}}</h3>
+          <p>
+            {{generals.all.general[0].aboutProfile.aboutDescription}}
+          </p>
+      </div>
+
+  </div>
+  
+  <div class="row">
+  <ul>
+      <li><a href="#home" class="active">home</a></li>
+      <li><a href="#about">about</a></li>
+      <li><a href="#teacher">teacher</a></li>
+      <li><a href="#course">course</a></li>
+      <li><a href="#review">review</a></li>
+      <li><a href="#contact">contact</a></li>
+  </ul>
+  </div>
+  
+  <div class="row">
+  INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh 
+  </div>
+  </div>
+  </footer>
+  
+  
+<!-- *************************************************** NOTE footer  end *************************************** -->
+

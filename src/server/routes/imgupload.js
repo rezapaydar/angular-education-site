@@ -57,10 +57,6 @@ imguploadRoute.post('/upload',upload.single('image'),async (req, res, next) => {
         desc: req.file.desc,
         path: req.file.path,
         type: req.file.mimetype
-        // img: {
-        //     data:path.join(__dirname,'../uploads',req.file.filename),
-        //     contentType: req.file.mimetype
-        // }
     }
     // imagemodel.({"desc": "lorem ipsum dolor isset"})
     imagemodel.create(obj);

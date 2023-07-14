@@ -1,0 +1,7 @@
+{
+    "/api/*": {
+        "target": "https://www.aparat.com",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

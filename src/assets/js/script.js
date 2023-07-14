@@ -29,6 +29,12 @@ function clicker() {
 }
 
 
+function menuToggle() {
+    const toggleMenu = document.querySelector(".menu");
+    toggleMenu.classList.toggle("active");
+}
+
+
 window.addEventListener('scroll',()=>{
 
     let click = document.getElementById('fa-bars')
@@ -93,32 +99,5 @@ window.addEventListener('scroll',()=>{
 });
 
 
-
-// setInterval(function() {
-//     var scrollPosition = window.scrollY;
-//     var result = scrollPosition * 2; // محاسبه نتیجه جدید با استفاده از موقعیت اسکرول
-//     console.log('Result:', result); // نمایش نتیجه جدید به کاربر
-//   }, 100); // فراخوانی تابع هر 100 میلی ثانیه
-
-
-//   function calculateScrollPosition() {
-
-    
-//     let click = document.getElementById('fa-bars')
-//     let navbar = document.getElementById('navbar') 
-//     let header = document.getElementById('header') 
-//     let navbar2 = document.getElementById('navbar2') 
-
-//     let scrollPosition = window.pageYOffset;
-//     if (scrollPosition > 30) {
-//         click.classList.remove('fa-times');
-//         navbar.style.display='none';
-//         header.style.position="fixed";
-//     }else{
-//         header.style.position="relative";
-
-//     }
-    
-// }
   
   

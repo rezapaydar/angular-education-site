@@ -65,6 +65,7 @@ app.use('/topteacher',require('./routes/topteacher'))
 app.use('/topcourses',require('./routes/topcourses'))
 app.use('/studentreview',require('./routes/studentReview'))
 app.use('/contact',require('./routes/contactus'))
+app.use('/auth',require('./routes/login'))
 
 
 app.listen(3000, () => {

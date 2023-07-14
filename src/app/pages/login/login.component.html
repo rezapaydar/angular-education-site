@@ -1,0 +1,49 @@
+
+
+
+<div class="wrapper">
+
+    <!-- <button class="back-button" id="logreg">
+        <svg viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
+            <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0"/>
+        </svg>
+        <span>
+            <i class="fas fa-reply"></i> خانه
+        </span>
+    
+    
+    </button> -->
+
+    <div class="form-structor">
+
+        <a href="#" class="logo"> <i class="fas fa-user-graduate"></i>logo</a>
+        <!-- <div class="signup">
+            <h2 class="form-title" id="signup"><span>یا</span>ثبت نام</h2>
+            <div class="form-holder">
+                <input type="text" class="input" placeholder="نام" />
+                <input type="email" class="input" placeholder="ایمیل" />
+                <input type="password" class="input" placeholder="رمز" />
+            </div>
+            <button class="submit-btn">ثبت نام</button>
+        </div> -->
+        <!-- <button></button> -->
+        <div class="signup">
+            <div class="button-wrapper">
+                <button type="button" (click)="redirectTo('home')"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>
+                </div>
+            <div class="center">
+                <h2 class="form-title text-dark" style="color:  rgba(0,0,0,0.4);font-size: 25px;" id="login"><span>یا</span>ورود</h2>
+                <div class="form-holder">
+                    <form  [formGroup]="loginForm">
+                        <input type="email" formControlName="username" autocomplete="username" class="input"  placeholder="نام کاربری" />
+                        <input type="password" formControlName="password" autocomplete="new-password" class="input"  placeholder="رمزعبور" />
+                        <button (click)="sendForm()" class="submit-btn">ورود</button>
+                    </form>
+                </div>
+                <span class="txt">حساب ندارید ؟ <button (click)="redirectTo('signup')">ثبت نام </button> کنید</span>
+            </div>
+        </div>
+    </div>
+
+</div>
+

@@ -32,7 +32,8 @@
               "src/server/uploads"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/sweetalert2/src/sweetalert2.scss"
             ],
             "scripts": []
           },
@@ -101,7 +102,8 @@
               "src/server/uploads"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/sweetalert2/src/sweetalert2.scss"
             ],
             "scripts": []
           }
