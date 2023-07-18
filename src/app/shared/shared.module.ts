@@ -6,9 +6,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ModalService } from './services/modal.services';
 import { ModalComponent } from './modal/modal.component';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { GeneralsVarService } from './services/generals-var.service';
 
 @NgModule({
   declarations: [
+    HeaderComponent,
+    FooterComponent,
     ModalComponent
   ],
   imports: [
@@ -23,9 +28,12 @@ import { ModalComponent } from './modal/modal.component';
     HttpClientModule,
     ReactiveFormsModule,
     RouterModule,
+    HeaderComponent,
+    FooterComponent,
+    ModalComponent,
   ],providers:[
     ModalService,
-    ModalComponent
+    GeneralsVarService
   ]
 })
 export class SharedModule { }

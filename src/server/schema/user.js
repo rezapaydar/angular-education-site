@@ -1,10 +1,12 @@
 var mongoose = require('mongoose');
 
 var userschema = new mongoose.Schema({
-    name: String,
+    channelName: String,
+    channelDescription: String,
     email: String,
     username:String,
     password:String,
+    telephone:String,
     isAdmin:Boolean,
     profilePicture:{
         name:String,

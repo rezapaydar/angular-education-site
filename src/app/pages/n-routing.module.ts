@@ -9,6 +9,9 @@ const routes: Routes = [
       {path:'login',component:LoginComponent},
       {path:'home',component:HomeComponent},
       {path:'signup',component:SignupComponent},
+      {path:'profile',
+        loadChildren: () => import('./profile/profile.module').then(m => m.ProfileModule),
+      },
 ];
 
 @NgModule({

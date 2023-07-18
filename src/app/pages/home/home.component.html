@@ -1,11 +1,11 @@
 
 
-  
-  <!-- ****************************************************** ANCHOR start  menu 1 and header ************************************************** -->
-  
-  
+<!-- ****************************************************** ANCHOR start  menu 1 and header ************************************************** -->
 
-  <header id="header">
+
+<app-header></app-header>
+
+  <!-- <header id="header">
   
     <a href="#" class="logo"> <i class="fas fa-user-graduate"></i>logo</a>
 
@@ -37,7 +37,7 @@
                   <ul>
                     <!-- <li>
                       <img src="./assets/icons/user.png" /><a href="#">My profile</a>
-                    </li> -->
+                    </li> 
                     <li>
                       <img src="assets/images/edit.png" /><a href="#">ویرایش پروفایل</a>
                     </li>
@@ -47,7 +47,7 @@
                     <!-- <li>
                       <img src="./assets/icons/settings.png" /><a href="#">Setting</a>
                     </li>
-                    <li><img src="./assets/icons/question.png" /><a href="#">Help</a></li> -->
+                    <li><img src="./assets/icons/question.png" /><a href="#">Help</a></li> 
                     <li>
                       <img src="assets/images/logout.png" /><a (click)="logout()">خروج</a>
                     </li>
@@ -61,7 +61,7 @@
 
     <div class="fas fa-bars" id="fa-bars" onclick="clicker()"></div>
 
-</header>
+</header> -->
 
 <!-- ******************************************************ANCHOR end  menu 1 and header ************************************************** -->
 
@@ -407,12 +407,12 @@
         </form>
     </div>
 
-  <!-- <jw-modal id="modal-1">
+  <jw-modal id="modal-1">
       <h1>لطفا فرم را با دقت پر کنید</h1>
       <p>دقت کنید تمام ورودی ها با فرمت صحیح باشند</p>
       <button (click)="modalService.close();">باشه
       </button>
-  </jw-modal> -->
+  </jw-modal>
 
 </div>
 
@@ -422,36 +422,7 @@
 
 <!-- *************************************************** NOTE footer start *************************************** -->
 
-<footer>
-  <div class="footer">
-      <a href="#" class="logo"> <i class="fas fa-user-graduate"></i>logo</a>
-  <div class="row">
-
-      <div class="content">
-          <h3>{{generals.all.general[0].aboutProfile.aboutTitle}}</h3>
-          <p>
-            {{generals.all.general[0].aboutProfile.aboutDescription}}
-          </p>
-      </div>
-
-  </div>
-  
-  <div class="row">
-  <ul>
-      <li><a href="#home" class="active">home</a></li>
-      <li><a href="#about">about</a></li>
-      <li><a href="#teacher">teacher</a></li>
-      <li><a href="#course">course</a></li>
-      <li><a href="#review">review</a></li>
-      <li><a href="#contact">contact</a></li>
-  </ul>
-  </div>
-  
-  <div class="row">
-  INFERNO Copyright © 2021 Inferno - All rights reserved || Designed By: Mahesh 
-  </div>
-  </div>
-  </footer>
+<app-footer></app-footer>
   
   
 <!-- *************************************************** NOTE footer  end *************************************** -->

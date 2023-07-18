@@ -14,13 +14,14 @@ import SwiperCore , {
 } from 'swiper';
 import { BehaviorSubject, filter, timeout } from "rxjs";
 import Swiper from "swiper/types/swiper-class";
-import { environment } from "../../../environments/environment.prod";
+import { environment  } from "../../../environments/environment.prod";
 import { DomSanitizer } from '@angular/platform-browser';
 import { Buffer } from 'buffer';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { ModalService } from '../../shared/services/modal.services';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import Swal from 'sweetalert2';
+import { GeneralsVarService } from 'src/app/shared/services/generals-var.service';
 
 
 
@@ -63,7 +64,7 @@ export class HomeComponent implements OnInit {
     telephone: new FormControl('',[Validators.required]),
     message: new FormControl('',Validators.required),
   });
-  constructor(private http:HttpClient,public modalService: ModalService,private Router:Router,private Route:ActivatedRoute){}
+  constructor(private http:HttpClient,public modalService: ModalService,private Router:Router,private Route:ActivatedRoute,private generalService:GeneralsVarService){}
 
   ngOnInit(): void {
     
@@ -103,8 +104,6 @@ export class HomeComponent implements OnInit {
 
     data.forEach((element:any) => {
           const path = element.path.replace('\\','/');
-
-
           
           element.path = path;
           // element.dataBase64 = Buffer.from(dataBuffer).toString('base64');
@@ -139,6 +138,8 @@ export class HomeComponent implements OnInit {
 
       console.log(data);
       this.generals = data;
+      this.generalService.general = this.generals;
+      // console.log('this is global : '+ JSON.stringify(this.generalService));
       
     },(error:any)=>{
       console.error(error);

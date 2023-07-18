@@ -62,17 +62,7 @@ export class LoginComponent implements OnInit {
 
         setTimeout(()=>{
           // console.log(this.loginProp.token);    
-          this.http.get(environment.urls.baseUrl+"/auth/me",{headers:new HttpHeaders({"token":`${this.loginProp.token}`})}
-          ).subscribe(
-            (resp:any)=>{
-              console.log(resp);
-              
-            },
-            (err:any)=>{
-              console.log(err);
-              
-            }
-          )
+          
         },2000)
 
 

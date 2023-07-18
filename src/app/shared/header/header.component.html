@@ -1,0 +1,57 @@
+<header id="header">
+  
+    <a href="#" class="logo"> <i class="fas fa-user-graduate"></i>logo</a>
+
+    <nav class="navbar" id="navbar">
+
+        <ul>
+            <li><a href="#home" class="active">home</a></li>
+            <li><a href="#about">about</a></li>
+            <li><a href="#teacher">teacher</a></li>
+            <li><a href="#course">course</a></li>
+            <li><a href="#review">review</a></li>
+            <li><a href="#contact">contact</a></li>
+
+              <button id="logreg"  [ngStyle]="{'display': isDisplayed}" (click)="goto('login')" >
+                      <span>
+                          <i class="fas fa-reply"></i> sign in
+                      </span>
+                      <svg viewBox="-5 -5 110 110" preserveAspectRatio="none" aria-hidden="true">
+                          <path d="M0,0 C0,0 100,0 100,0 C100,0 100,100 100,100 C100,100 0,100 0,100 C0,100 0,0 0,0"/>
+                          </svg>
+              </button>
+
+              <div class="action" [ngStyle]="{'display':isNotDisplayed}">
+                <div class="profile" onclick="menuToggle();">
+                  <img src="./assets/avatar.jpg" />
+                </div>
+                <div class="menu">
+                  <h3>Someone Famous<br /><span>Website Designer</span></h3>
+                  <ul>
+                    <!-- <li>
+                      <img src="./assets/icons/user.png" /><a href="#">My profile</a>
+                    </li> -->
+                    <li>
+                      <img src="assets/images/edit.png" /><a (click)="goto('profile')">ویرایش پروفایل</a>
+                    </li>
+                    <li>
+                      <img src="assets/images/upload.png" /><a href="#">آپلود ویدیو</a>
+                    </li>
+                    <!-- <li>
+                      <img src="./assets/icons/settings.png" /><a href="#">Setting</a>
+                    </li>
+                    <li><img src="./assets/icons/question.png" /><a href="#">Help</a></li> -->
+                    <li>
+                      <img src="assets/images/logout.png" /><a (click)="logout()">خروج</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+
+        </ul>
+
+    </nav>
+
+    <div class="fas fa-bars" id="fa-bars" onclick="clicker()"></div>
+
+</header>

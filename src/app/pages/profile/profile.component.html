@@ -1,0 +1,33 @@
+<app-header></app-header>
+
+<main class="main">
+	<div class="responsive-wrapper">
+		<div class="main-header">
+			<h1> پروفایل کاربری</h1>
+			<div class="search">
+				<input type="text" placeholder="جست جو" />
+				<button type="submit">
+					<i class="fa fa-search"></i>
+				</button>
+			</div>
+		</div>
+		<div class="horizontal-tabs">
+			<a routerLink="settings" routerLinkActive="active">تنظیمات پروفایل</a>
+			<a href="#">ویدیو ها</a>
+			<a href="#">آپلود ویدیو</a>
+			<a href="#">اطلاعات کانال</a>
+			<!-- <a href="#">Plan</a>
+			<a href="#">Billing</a>
+			<a href="#">Email</a>
+			<a href="#">Notifications</a>
+			<a href="#" class="active">Integrations</a>
+			<a href="#">API</a> -->
+		</div>
+
+		<router-outlet></router-outlet>
+		
+
+	</div>
+</main>
+
+<app-footer></app-footer>

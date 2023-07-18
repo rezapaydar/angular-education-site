@@ -5,6 +5,7 @@ import { HomeComponent } from './home/home.component';
 import { SharedModule } from '../shared/shared.module';
 import { NRoutingModule } from './n-routing.module';
 import { SignupComponent } from './signup/signup.component';
+import { ProfileModule } from './profile/profile.module';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { SignupComponent } from './signup/signup.component';
     NRoutingModule,
     SharedModule,
     CommonModule,
+    ProfileModule,
   ],exports:[
     LoginComponent,
     HomeComponent,
